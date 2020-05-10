@@ -3,7 +3,9 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 
-const CLIENT_DIR = path.resolve(__dirname, '../client');
+const CLIENT_DIR = path.resolve(__dirname, '../');
+
+console.log('CLIENT_DIR:', CLIENT_DIR);
 
 module.exports = {
   entry: {
