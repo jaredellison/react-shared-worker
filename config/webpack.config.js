@@ -2,6 +2,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
+const WorkerPlugin = require('worker-plugin');
 
 const CLIENT_DIR = path.resolve(__dirname, '../');
 
@@ -77,6 +78,9 @@ module.exports = {
       filename: '[name].style.css',
       chunkFilename: '[id].css',
       ignoreOrder: false // Enable to remove warnings about conflicting order
+    }),
+    new WorkerPlugin({
+      sharedWorker: true
     })
   ],
   devServer: {
