@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack-dev-server": "webpack-dev-server --hot --config config/dewebpack.config.js",
+    "webpack-dev-server": "webpack-dev-server --hot --config config/webpack.config.js",
     "start": "node server",
-    "start-dev": "./node_modules/concurrently/bin/concurrently.js 'npm run build-dev' 'npm run start-dev'",
+    "start-dev": "./node_modules/concurrently/bin/concurrently.js 'npm run build-dev' 'npm run serve-dev'",
     "serve-dev": "nodemon server/",
-    "build": "npm run clean && webpack --mode production --config config/prod.webpack.config.js",
-    "build-dev": "webpack --mode development --config config/dev.webpack.config.js",
+    "build": "npm run clean && webpack --mode production --config config/webpack.config.js",
+    "build-dev": "webpack --mode development --config config/webpack.config.js",
     "clean": "rm -rf client/build/"
   },
   "keywords": [],
